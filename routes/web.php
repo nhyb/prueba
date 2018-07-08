@@ -15,4 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('Departamento', 'DepartamentoController');
+
+
+Auth::routes();
+
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/home', 'DashboardController@index')->name('home');
+    Route::resource('/usuarios', 'UserController');
+    Route::resource('/departamentos', 'AparmentController');
+
+});
