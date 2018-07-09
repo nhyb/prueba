@@ -22,7 +22,8 @@ class AparmentController extends Controller
 
     public function store(Request $request)
     {
-        Apartment::create($request->all());
+
+        Aparment::create($request->all());
         return redirect('/departamentos');
     }
 
@@ -33,21 +34,25 @@ class AparmentController extends Controller
     }
 
 
-    public function edit(Aparment $aparment)
+    public function edit($id)
     {
-        return view('aparments.edit')->whit('aparment',$aparment);
+        $aparment = Aparment::find($id);
+        return view('aparments.edit')->with('aparment',$aparment);
     }
 
 
-    public function update(Request $request, Aparment $aparment)
+    public function update(Request $request, $id)
     {
-        Apartment::update($request->all());
+
+        $aparment = Aparment::find($id);
+        $aparment->update($request->all());
         return redirect('/departamentos');
     }
 
 
-    public function destroy(Aparment $aparment)
+    public function destroy($id)
     {
+        $aparment = Aparment::find($id);
         $aparment->delete();
         return redirect('/departamentos');
 
