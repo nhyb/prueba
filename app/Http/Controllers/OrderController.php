@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return view('orders.index')->with('orders', Order::all());
     }
 
     /**
@@ -24,18 +20,14 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('orders.create')->with('aparments', \App\Aparment::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        Order::create($request->all());
+        return redirect('/ordenes');
     }
 
     /**

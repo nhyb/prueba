@@ -13,7 +13,7 @@
         <li><a href="#">Propiedad</a></li>
         <li><a href="/departamentos">Departamentos</a></li>
         <li><a href="donaciones.html">Contratos</a></li>
-        <li><a href="_tipo_ordenes.html">Ordenes</a></li>
+        <li><a href="/ordenes">Ordenes</a></li>
         <li><a href="publicaciones.html">Gastos Comun</a></li>
         <li><a href="reportes.html">Reportes</a></li>
         <li><a href="/usuarios">Usuarios</a></li>
